@@ -573,7 +573,7 @@ function store (state, emitter) {
   state.selected = null
   state.selectedIndex = null
   state.tabIndex = 0
-  state.functions = Object.values(hydraFunctions)
+  state.functions = Object.values(hydraFunctions).filter((obj) => examples[obj.name] !== undefined)
   //console.log(functions.generator.glslTransforms)
 
   emitter.on('show details', (obj, typeIndex, tabIndex) => {
